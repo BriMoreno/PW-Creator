@@ -20,31 +20,28 @@ function generatePassword() {
     let numbers = window.confirm("Would you like numbers as well?(Y/N)");
 
     //double checks valid user inputs
-    if (chara <= 8 && chara >= 128) {
-        return"Please enter a value in the range of 8 to 128";
-    }
-    
-    if (specChara === false && caseU === false && caseL === false && numbers === false) {
-        return"Please enter at least 1 type of character to be in your password";
-    }
-    if (specChara === true || caseU === true || numbers === true || caseL === true) {
-        if (specChara) {
-            charaSet = charaSet.concat(validSymbols);
-            console.log(charaSet);
+    if (chara >= 8 && chara <= 128) {
+        //this checks if any confirms all confirms were denied
+        if (specChara === false && caseU === false && caseL === false && numbers === false) {
+            return"Please enter at least 1 type of character to be in your password";
         }
-        if (caseU) {
-            charaSet = charaSet.concat(alphabetU);
-            console.log(charaSet);
+        if (specChara === true || caseU === true || numbers === true || caseL === true) {
+            if (specChara) {
+                charaSet = charaSet.concat(validSymbols); //makes new array if they selected they want symbols.
+            }
+            if (caseU) {
+                charaSet = charaSet.concat(alphabetU); //Adds to the new array
+            }
+            if (caseL) {
+                charaSet = charaSet.concat(alphabetL); //Adds to the new array
+            }
+            if (numbers) {
+                charaSet = charaSet.concat(validNum); //Adds to the new array
+            }
         }
-        if (caseL) {
-            charaSet = charaSet.concat(alphabetL);
-            console.log(charaSet);
-        }
-        if (numbers) {
-            charaSet = charaSet.concat(validNum);
-            console.log(charaSet);
-        }
-
+    } else {
+        //displays messange if requirement is not met
+        return("Please enter a number in the range of 8 to 128 for character length.");
     }
 };
 
