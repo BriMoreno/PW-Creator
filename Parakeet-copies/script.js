@@ -43,6 +43,19 @@ function generatePassword() {
         //displays messange if requirement is not met
         return("Please enter a number in the range of 8 to 128 for character length.");
     }
+    for charaSet(var i = 0; i < chara.length; i++) [
+        // DECLARE a new empty string to store the password we want to build. createPw
+
+        // FOR the length of the password the user wants
+
+        // Randomly select a character from the list of characters
+       // createPw = 
+        // Add the selected character to the password being built;
+
+        return createPw;// RETURN the built password;
+
+  ]
+   
 };
 
 // Write password to the #password input
