@@ -9,6 +9,7 @@ const alphabetU = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")];
 const validNum = [0,1,2,3,4,5,6,7,8,9];
 const validSymbols = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", "|"];
 
+
 function generatePassword() {
 //Prompts asked user to see what they want
     var charaSet = [];
@@ -18,45 +19,55 @@ function generatePassword() {
     let caseU = window.confirm("Would you like uppercase letters?(Y/N)");
     let caseL = window.confirm("Would you like lowercase letters?(Y/N)");
     let numbers = window.confirm("Would you like numbers as well?(Y/N)");
-
+    var length = chara;
+    console.log(length);
     //double checks valid user inputs
-    if (chara >= 8 && chara <= 128) {
+    if (chara > 8 || chara < 128) {
+        return("Please enter a number in the range of 8 to 128 for character length.");
+    } else {
+        console.log(chara);
+    }
         //this checks if any confirms all confirms were denied
         if (specChara === false && caseU === false && caseL === false && numbers === false) {
             return"Please enter at least 1 type of character to be in your password";
         }
-        if (specChara === true || caseU === true || numbers === true || caseL === true) {
+            if (specChara === true || caseU === true || numbers === true || caseL === true) {
             if (specChara) {
                 charaSet = charaSet.concat(validSymbols); //makes new array if they selected they want symbols.
+                console.log(charaSet);
             }
             if (caseU) {
                 charaSet = charaSet.concat(alphabetU); //Adds to the new array
+                console.log(charaSet);
             }
             if (caseL) {
                 charaSet = charaSet.concat(alphabetL); //Adds to the new array
+                console.log(charaSet);
             }
             if (numbers) {
                 charaSet = charaSet.concat(validNum); //Adds to the new array
+                console.log(charaSet);
             }
         }
-    } else {
-        //displays messange if requirement is not met
-        return("Please enter a number in the range of 8 to 128 for character length.");
     }
-    for charaSet(var i = 0; i < chara.length; i++) [
-        // DECLARE a new empty string to store the password we want to build. createPw
 
-        // FOR the length of the password the user wants
+//var generateBtn = document.querySelector("#generate");
 
-        // Randomly select a character from the list of characters
-       // createPw = 
-        // Add the selected character to the password being built;
+//function generatePassword() {
 
-        return createPw;// RETURN the built password;
+  //var length = askUser.forPasswordLength();
 
-  ]
-   
-};
+  // Exit early if we couldn't get a valid `length`.
+  //if( false === length ) return "";
+
+  //var options = askUser.forOptionChoices();
+
+  // Exit early if we didn't get a list of usable `options`.
+  //if( false === options ) return "";
+
+  //return charChoices.fillRandom( length, options ).join("");
+
+//}
 
 // Write password to the #password input
 function writePassword() {
