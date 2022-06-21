@@ -7,7 +7,6 @@ I WANT to randomly generate a password that meets certain criteria
 SO THAT I can create a strong password that provides greater security
 
 # Acceptance Criteria, GIVEN I need a new, secure password
-git 
 WHEN I click the button to generate a password
 THEN I am presented with a series of prompts for password criteria
 

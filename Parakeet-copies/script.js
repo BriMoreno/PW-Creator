@@ -4,8 +4,8 @@ var generateBtn = document.querySelector("#generate"); //generate is the button
 generateBtn.addEventListener("click", writePassword); //make the generateBtn function
 
 //arrays to chose characters for the password
-const alphabetL = ["abcdefghijklmnopqrstuvwxyz".split("")];
-const alphabetU = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")];
+const alphabetL = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+const alphabetU = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 const validNum = [0,1,2,3,4,5,6,7,8,9];
 const validSymbols = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", "|"];
 
@@ -49,7 +49,16 @@ function generatePassword() {
                 console.log(charaSet);
             }
         }
-    }
+        //shuffle the set
+           const shuffled = charaSet.sort(() => 0.5 - Math.random());
+
+        // Get array after shuffled
+           createPw = shuffled.slice(0, length);
+           //remove commas/seperation
+           return createPw.join("");
+    
+        }
+     
 
 function writePassword() {
     var password = generatePassword(); //define this function generate Password
