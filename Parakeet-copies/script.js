@@ -22,7 +22,7 @@ function generatePassword() {
     var length = chara;
     console.log(length);
     //double checks valid user inputs
-    if (chara > 8 || chara < 128) {
+    if (chara < 8 || chara > 128) {
         return("Please enter a number in the range of 8 to 128 for character length.");
     } else {
         console.log(chara);
@@ -51,25 +51,6 @@ function generatePassword() {
         }
     }
 
-//var generateBtn = document.querySelector("#generate");
-
-//function generatePassword() {
-
-  //var length = askUser.forPasswordLength();
-
-  // Exit early if we couldn't get a valid `length`.
-  //if( false === length ) return "";
-
-  //var options = askUser.forOptionChoices();
-
-  // Exit early if we didn't get a list of usable `options`.
-  //if( false === options ) return "";
-
-  //return charChoices.fillRandom( length, options ).join("");
-
-//}
-
-// Write password to the #password input
 function writePassword() {
     var password = generatePassword(); //define this function generate Password
     var passwordText = document.querySelector("#password");
